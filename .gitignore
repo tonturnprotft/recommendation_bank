@@ -1,0 +1,24 @@
+# --- Project-specific (keep code, drop heavy) ---
+/data/
+/outputs/json/
+/outputs/artifacts/
+/outputs/predictions/
+/outputs/balanced/*.parquet
+*.parquet
+*.pkl
+
+# allow metrics CSVs to remain tracked
+!/outputs/metrics/**
+
+# optional placeholders to keep empty dirs
+!/data/.gitkeep
+!/outputs/json/.gitkeep
+
+# --- Python/Jupyter hygiene ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.DS_Store
+.venv/
+.env
