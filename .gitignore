@@ -1,23 +1,19 @@
-# --- Project-specific (keep code, drop heavy) ---
+# --- Keep heavy dirs ignored by default ---
 /data/
-/outputs/json/
-/outputs/artifacts/
-/outputs/predictions/
-/outputs/balanced/*.parquet
-*.parquet
-*.pkl
+/outputs/**
 
-# allow metrics CSVs to remain tracked
+# --- Allow these (un-ignore) ---
+!/outputs/artifacts/blended/metadata.json
 !/outputs/metrics/**
+!/outputs/predictions/prod/recs.jsonl
+!/outputs/predictions/prod/recs_top3.csv
 
-# optional placeholders to keep empty dirs
-!/data/.gitkeep
-!/outputs/json/.gitkeep
+# (Optional) If labels file is small, allow it; otherwise use Option 2 (LFS)
+!/outputs/balanced/labels_mm_folded.parquet
 
-# --- Python/Jupyter hygiene ---
+# Hygiene
 __pycache__/
 *.py[cod]
-*.egg-info/
 .ipynb_checkpoints/
 .DS_Store
 .venv/
