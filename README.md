@@ -128,4 +128,5 @@ python3 check_predict.py  # quick QC
 ```
 
 ---
+Cite as:	arXiv:2409.17587 [cs.LG]
 
